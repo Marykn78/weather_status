@@ -1,0 +1,31 @@
+{
+  "coord": { "lon": 50.8764, "lat": 34.6401 },
+  "weather": [
+    {
+      "id": 804,
+      "main": "Clouds",
+      "description": "overcast clouds",
+      "icon": "04d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 297.59,
+    "feels_like": 296.77,
+    "temp_min": 297.59,
+    "temp_max": 297.59,
+    "pressure": 1016,
+    "humidity": 26,
+    "sea_level": 1016,
+    "grnd_level": 914
+  },
+  "visibility": 10000,
+  "wind": { "speed": 2.39, "deg": 68, "gust": 2.19 },
+  "clouds": { "all": 86 },
+  "dt": 1666256734,
+  "sys": { "country": "IR", "sunrise": 1666233948, "sunset": 1666274193 },
+  "timezone": 12600,
+  "id": 119208,
+  "name": "Qom",
+  "cod": 200
+}
