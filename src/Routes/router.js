@@ -1,7 +1,7 @@
 import React from 'react';
 import {createBrowserRouter} from 'react-router-dom';
 import Home from '../pages/Home/Homepage';
-import Forecastpage from '../pages/Forecastpage/Forecastcity';
+import Forecastpage from '../pages/Forecastpage/Forecastpage';
 
 export const router =createBrowserRouter([
     {
@@ -9,7 +9,7 @@ export const router =createBrowserRouter([
         element: <Home />
     },
     {
-        path:"forecast",
+        path:"forecast/:cityid",
         element:<Forecastpage/>
     }
 ])
