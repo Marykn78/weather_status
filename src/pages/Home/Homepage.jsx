@@ -16,9 +16,9 @@ const Homepage = () => {
     &appid=196944c23663e73dfaf15cfcdeb48277`
 
     const dispatch =useDispatch()
-    const searchCity =(e)=>{
+    const searchCity = async (e)=>{
         if(e.key === 'Enter'){
-            axios.get(url).then((response)=>{
+            await axios.get(url).then((response)=>{
                 dispatch(addCity(setDataa(response.data)))
             })
         }
@@ -26,20 +26,11 @@ const Homepage = () => {
     return (
     <div className="card-container">
         <div className="main_card">
-            <div className="card_title">
-                <iconify-icon icon="fluent:weather-fog-48-regular" width="44" style={{color:"white"}}></iconify-icon>
-            </div>
-            <div className="select_container">
-                <Header dataa={dataa} searchCity={searchCity} location={location} setLocation={setLocation}/>
-            </div>
-            <div className="card-status">
-                <Cards dataa={dataa}/>
-            </div>
-            <div>
-                <Link to={"/forecast"}>
-                    <Forecastday/>
-                </Link>
-            </div>
+            <Header dataa={dataa} searchCity={searchCity} location={location} setLocation={setLocation}/>
+            <Cards dataa={dataa}/>
+            <Link to={"/forecast"}>
+                <Forecastday/>
+            </Link>
         </div>
     </div>
   );

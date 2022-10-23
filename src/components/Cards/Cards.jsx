@@ -1,11 +1,11 @@
 // import '../../pages/Home/Home.style.scss';
 const Cards = ({ dataa }) => {
-//   const datacard = [{ icon:<iconify-icon icon="carbon:temperature-celsius" width="56"></iconify-icon>, title: "دما",detail:dataa.main.temp },
-// ];
+  //   const datacard = [{ icon:<iconify-icon icon="carbon:temperature-celsius" width="56"></iconify-icon>, title: "دما",detail:dataa.main.temp },
+  // ];
   return (
-    <>
-        <div className="card_item">
-            {/* {datacard.map(card=>(
+    <div className="card-status">
+      <div className="card_item">
+        {/* {datacard.map(card=>(
                 <>
                     <div className="item">{card.icon}</div>
                     <div className="item">{dataa.main ? <h2>{card.data}</h2> : null}</div>
@@ -13,16 +13,19 @@ const Cards = ({ dataa }) => {
                 </>
                 
             ))} */}
-            <div className="item">
-            <iconify-icon icon="carbon:temperature-celsius" width="56"></iconify-icon>
-            </div>
-            <div className="item">
-            {dataa.main ? <h2>{dataa.main.temp}</h2> : null}
-            </div>
-            <div className="item">
-            <h3 className="item_description">دما</h3>
-            </div>
+        <div className="item">
+          <iconify-icon
+            icon="carbon:temperature-celsius"
+            width="56"
+          ></iconify-icon>
         </div>
+        <div className="item">
+          {dataa.main ? <h2>{dataa.main.temp}</h2> : null}
+        </div>
+        <div className="item">
+          <h3 className="item_description">دما</h3>
+        </div>
+      </div>
       <div className="card_item">
         <div className="item">
           <iconify-icon icon="fontisto:wind" width="56"></iconify-icon>
@@ -68,7 +71,7 @@ const Cards = ({ dataa }) => {
           <h3 className="item_description">وضعیت هوا</h3>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
