@@ -1,6 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
-const initialState={}
-const weatherSlice =createSlice({
+const initialState=[]
+export const weatherSlice =createSlice({
     name:'weather',
     initialState,
     reducers:{

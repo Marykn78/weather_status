@@ -9,7 +9,7 @@ export const router =createBrowserRouter([
         element: <Home />
     },
     {
-        path:"forecast/:cityid",
+        path:"/forecast/:cityid",
         element:<Forecastpage/>
     }
 ])
