@@ -9,31 +9,34 @@ const Forecastpage = () => {
   const cities =useSelector(state=>state.weather)
   const {cityid} =useParams() 
   // console.log(cityid)
-  const [forecastData,setForecast]=useState({})
+  const [forecastData,setForecast]=useState()
   // const [cityfuture,setFuture]=useState('')
-  useEffect(()=>{
-    //setFuture ,${cityfuture.name}
-    setForecast(cities.filter(city=>city === Number(cityid))[0])
-  },[])
+  // useEffect(()=>{
+  //   setForecast(cities.filter(city=>city === Number(cityid))[0])
+  // },[])
   const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityid}&lang=fa&units=metric&appid=196944c23663e73dfaf15cfcdeb48277`
   const dispatch =useDispatch()
   const forecastHandler =()=>{
     axios.get(url).then((response)=>{
         // dispatch(addCity(setForecast(response.data)))
-        setForecast(response.data.list)
-        // console.log(response.data.cod)
+        setForecast(response.data)
+        // console.log(response.data.list[0])
     })
     // setFuture('')
   }
-  // console.log(forecastData)
+  useEffect(()=>{
+    forecastHandler()
+  },[])
+  console.log(forecastData)
   
   return(
     <>
       {/* <div>
         <button onClick={forecastHandler}>show</button>
       </div> */}
-      {/* {forecastData.list ? <h2>{forecastData.list}</h2>:null} */}
-      <SingleForecast/>
+      <h2>{ forecastData.list}</h2>
+      {/* {forecastData.list ? <h2>{forecastData.list[0].temp}</h2>:null} */}
+      {/* <SingleForecast/> */}
     </>
   )
 };
