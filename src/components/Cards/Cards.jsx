@@ -1,6 +1,6 @@
 // import '../../pages/Home/Home.style.scss';
 const Cards = ({ dataa }) => {
-  //   const datacard = [{ icon:<iconify-icon icon="carbon:temperature-celsius" width="56"></iconify-icon>, title: "دما",detail:dataa.main.temp },
+  //   const datacard = [{ icon:<iconify-icon icon="carbon:temperature-celsius" width="56"></iconify-icon>, title: "دما",detail:dataa.main.temp,default:22.5 },
   // ];
   return (
     <div className="card-status">
@@ -8,7 +8,7 @@ const Cards = ({ dataa }) => {
         {/* {datacard.map(card=>(
                 <>
                     <div className="item">{card.icon}</div>
-                    <div className="item">{dataa.main ? <h2>{card.data}</h2> : null}</div>
+                    <div className="item">{dataa.main ? <h2>{card.detail}</h2> : null}</div>
                     <div className="item"><h3 className="item_description">{card.title}</h3></div>
                 </>
                 
@@ -20,7 +20,7 @@ const Cards = ({ dataa }) => {
           ></iconify-icon>
         </div>
         <div className="item">
-          {dataa.main ? <h2>{dataa.main.temp}</h2> : null}
+          {dataa.main ? <h2>{dataa.main.temp}</h2> : <h2>22.5</h2>}
         </div>
         <div className="item">
           <h3 className="item_description">دما</h3>
@@ -31,8 +31,7 @@ const Cards = ({ dataa }) => {
           <iconify-icon icon="fontisto:wind" width="56"></iconify-icon>
         </div>
         <div className="item">
-          {dataa.wind ? <h2>{dataa.wind.speed}</h2> : null}
-          {/* <h2>{data.wind.speed}</h2> */}
+          {dataa.wind ? <h2>{dataa.wind.speed}</h2> : <h2>3.4</h2>}
         </div>
         <div className="item">
           <h3 className="item_description">سرعت باد</h3>
@@ -46,7 +45,7 @@ const Cards = ({ dataa }) => {
           ></iconify-icon>
         </div>
         <div className="item">
-          {dataa.clouds ? <h2>{dataa.clouds.all}</h2> : null}
+          {dataa.clouds ? <h2>{dataa.clouds.all}</h2> : <h2>83</h2>}
           {/* <h2>{data.clouds.all}</h2> */}
         </div>
         <div className="item">
@@ -61,11 +60,10 @@ const Cards = ({ dataa }) => {
               src={`http://openweathermap.org/img/w/${dataa.weather[0].icon}.png`}
               alt=""
             />
-          ) : null}
+          ) : <iconify-icon icon="bx:moon" width="56"></iconify-icon>}
         </div>
         <div className="item">
-          {dataa.weather ? <h4>{dataa.weather[0].description}</h4> : null}
-          {/* <h3>{data.main}</h3> */}
+          {dataa.weather ? <h4>{dataa.weather[0].description}</h4> : <h4>ابرهای پارچه پارچه شده</h4>}
         </div>
         <div className="item">
           <h3 className="item_description">وضعیت هوا</h3>

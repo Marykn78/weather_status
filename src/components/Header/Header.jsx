@@ -27,7 +27,7 @@ const Header = ({ dataa, searchCity, location, setLocation }) => {
                     </select> */}
         </div>
         <div className="city_name">
-          <h2 style={{ color: "white" }}>{dataa.name}</h2>
+          {dataa.name ? <h2>{dataa.name}</h2> : <h2>مشهد</h2>}
         </div>
       </div>
     </>
