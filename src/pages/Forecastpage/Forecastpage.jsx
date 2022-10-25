@@ -30,9 +30,7 @@ const Forecastpage = () => {
   }
   return(
     <>
-    <SliderForecast forecastData={forecastData} cityid={cityid} />
-      {/* <h2>{forecastData.list[0].main.temp}</h2> */}
-      
+    <SliderForecast forecastData={forecastData} cityid={cityid} />      
     </>
   )
 };

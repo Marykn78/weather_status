@@ -1,5 +1,4 @@
 const Header = ({ dataa, searchCity, location, setLocation }) => {
-  // const cityName =[{city:'تهران'},{city:'مشهد'},{city:'کرمان'},{city:'یزد'}]
   return (
     <>
       <div className="card_title">
@@ -20,11 +19,6 @@ const Header = ({ dataa, searchCity, location, setLocation }) => {
             placeholder={"شهر خود را وارد کنید..."}
             onKeyPress={searchCity}
           />
-          {/* <select name="city" onClick={searchCity} value={location}>
-                        {cityName.map(item=>(
-                            <option value={item.city} onChange={e=>setLocation(e.target.value)}>{item.city}</option>
-                        ))}
-                    </select> */}
         </div>
         <div className="city_name">
           {dataa.name ? <h2>{dataa.name}</h2> : <h2>مشهد</h2>}

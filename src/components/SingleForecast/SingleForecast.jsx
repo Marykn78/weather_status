@@ -1,30 +1,41 @@
+import { useNavigate } from "react-router-dom";
 import "./SingleForecast.style.scss";
-const SingleForecast = ({forecastData,cityid}) => {
+// forecastData,cityid
+const SingleForecast = ({day,cityid}) => {
+  const navigate = useNavigate()
+  const Backpage=()=>{
+    navigate('/')
+  }
   return (
     <div className="total_page">
       <div className="main__container">
         <div className="main__container_forecast">
-          <div>
-            <h2>{cityid} , IR</h2>
+          <div className="title_forcast">
+            <div>
+              <h2>{cityid} , IR</h2>
+            </div>
+            <div>
+              <p>{day.date}</p>
+            </div>
           </div>
         </div>
         <div className="forecast_details">
           <div className="forecast_items">
             <div className="item_temp">
-              <h1>{forecastData.list[0].main.temp}°</h1>
+              <h1>{day.temp}°</h1>
             </div>
             <div className="item_wind">
               <div className="item_detail">
                 <iconify-icon icon="fontisto:wind" width="24"></iconify-icon>
-                <h3>{forecastData.list[0].wind.speed}</h3>
+                <h3>{day.wind}</h3>
               </div>
               <div className="item_detail">
                 <iconify-icon icon="bx:moon" width="26"></iconify-icon>
-                <h3>{forecastData.list[0].weather.description}</h3>
+                <h5>{day.description}</h5>
               </div>
               <div className="item_detail">
                 <iconify-icon icon="akar-icons:cloud" width="26"></iconify-icon>
-                <h3>{forecastData.list[0].clouds.all}</h3>
+                <h3>{day.clouds}</h3>
               </div>
             </div>
           </div>
@@ -32,6 +43,7 @@ const SingleForecast = ({forecastData,cityid}) => {
             <iconify-icon icon="charm:sun" width="128"></iconify-icon>
           </div>
         </div>
+        <button onClick={Backpage} className="back-btn">بازگشت</button>
       </div>
     </div>
   );

@@ -1,7 +1,4 @@
-// import '../../pages/Home/Home.style.scss';
 const Cards = ({ dataa }) => {
-  //   const datacard = [{ icon:<iconify-icon icon="carbon:temperature-celsius" width="56"></iconify-icon>, title: "دما",detail:dataa.main.temp,default:22.5 },
-  // ];
   return (
     <div className="card-status">
       <div className="card_item">
@@ -46,7 +43,6 @@ const Cards = ({ dataa }) => {
         </div>
         <div className="item">
           {dataa.clouds ? <h2>{dataa.clouds.all}</h2> : <h2>83</h2>}
-          {/* <h2>{data.clouds.all}</h2> */}
         </div>
         <div className="item">
           <h3 className="item_description">میزان ابری بودن</h3>
@@ -74,3 +70,7 @@ const Cards = ({ dataa }) => {
 };
 
 export default Cards;
+
+
+  //   const datacard = [{ icon:<iconify-icon icon="carbon:temperature-celsius" width="56"></iconify-icon>, title: "دما",detail:dataa.main.temp,default:22.5 },
+  // ];

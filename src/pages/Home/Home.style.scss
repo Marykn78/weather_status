@@ -1,9 +1,9 @@
-// @font-face {
-//   font-family:dana;
-//   src: url(../../assets/Font/dana-regular.woff2);
-// }
+@font-face {
+  font-family:dana;
+  src: url(../../assets/Font/dana-regular.woff2);
+}
 *{
-  // font-family: dana;
+  font-family: dana;
   text-decoration: none;
   padding: 0;
   margin: 0;
@@ -15,14 +15,12 @@
   align-items: center;
   .main_card {
     display: flex;
-    // justify-content: space-around;
     align-items: center;
     flex-direction: column;
     width: 35%;
     height: 80vh;
     margin-top: 50px;
     background-image: url(../../assets/images/tom-barrett-hgGplX3PFBg-unsplash.jpg);
-    // background-color: rgb(82, 82, 236);
     border-radius: 8px;
     .card_title {
       display: flex;
@@ -58,12 +56,6 @@
             color: rgba(255,255,255,0.8);
           }
         }
-        // select{
-        //     width:150px;
-        //     height:30px;
-        //     border-radius:10px;
-        //     padding:0 8px;
-        // }
         select {
           background-color: #157bce;
           color: white;
@@ -72,31 +64,12 @@
           border: none;
           height:30px;
           font-size:18px;
-        //   border-radius:10px;
           box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
           outline: none;
-        //   -webkit-appearance: button;
-        //   appearance: button;
-        //   &:before {
-        //     content: "\f13a";
-        //     font-family: FontAwesome;
-        //     position: absolute;
-        //     top: 0;
-        //     right: 0;
-        //     width: 20%;
-        //     height: 100%;
-        //     text-align: center;
-        //     font-size: 28px;
-        //     line-height: 45px;
-        //     color: rgba(255, 255, 255, 0.5);
-        //     background-color: rgba(255, 255, 255, 0.1);
-        //     pointer-events: none;
-        //     }
         }
         
       }
       .city_name {
-        // background-color: rgb(255, 0, 238);
         width: 20%;
         display: flex;
         align-items: center;
@@ -123,11 +96,9 @@
         align-items: center;
         justify-content: center;
         padding-top: 3px;
-        // border: 2px solid #8d8d8d;
         border-radius: 8px;
         color: rgba(0, 0, 0, 0.837);
         .item {
-          // background-color: gray;
           height: 44px;
           display: flex;
           align-items: center;
@@ -136,7 +107,6 @@
             width:100px;
           }
           .item_description {
-            // color:#8d8d8d;
             font-weight: 800;
           }
         }

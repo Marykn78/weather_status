@@ -1,14 +1,26 @@
 // import axios from 'axios';
 import React,{useState} from 'react';
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 import SingleForecast from '../SingleForecast/SingleForecast';
-// import CardSmall from '../card/CardSmall';
-
+import './Slider.style.scss'
 const SliderForecast = ({forecastData,cityid}) => {
     const counter=[
         0,1,,2,3,4
     ]
-    const c=[0,8,16,24]
+    // const c=[0,8,16,24]
+    const [forcast,setForcast]=useState([])
+    const handleHour=(forecastData,forcast)=>{
+        for (let i = 0; i <5; i++) {
+          const item = forecastData.list[i];
+          forcast.push({date:item.dt_txt,icon:item.weather[0].icon,description:item.weather[0].description,clouds:item.clouds.all,wind:item.wind.speed,temp:item.main.temp});
+        }
+        return forcast;
+    }
+
+    useEffect(()=>{
+      handleHour(forecastData,forcast)
+    },[])
+
     const [currentIndex,setCurrentIndex]=useState(0)
 
     const left={
@@ -44,13 +56,12 @@ const SliderForecast = ({forecastData,cityid}) => {
         setCurrentIndex(newIndex);
     }
     return ( 
-        <div>
-          <SingleForecast forecastData={forecastData} cityid={cityid}/>
-          <div>
+        <div className='slide__section'>
+          <div style={{position:"relative"}}>
             <div style={left} onClick={goToPrev}><iconify-icon icon="ep:arrow-left-bold"></iconify-icon></div>
-           {/* {futureDays.filter((day)=>(day.id===currentIndex)).map((day)=>(
-                      <CardSmall day={day} />
-          ))} */}
+           {forcast.filter((day,index)=>(index===currentIndex)).map((day)=>(
+                <SingleForecast day={day} cityid={cityid}/>
+          ))}
           <div style={right} onClick={goToNext}><iconify-icon icon="ep:arrow-left-bold" rotate="180deg"></iconify-icon></div>
           </div>
     
